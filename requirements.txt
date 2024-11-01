@@ -2,7 +2,6 @@ flask
 pandas
 matplotlib
 numpy
-seaborn
 warnings
 scikit-learn
 joblib
