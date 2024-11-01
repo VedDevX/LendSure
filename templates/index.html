@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LendSure : Loan Predictor</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1>LendSure</h1>
+            <form action="{{ url_for('predict') }}" method="post">
+                <div class="input-group">
+                    <label for="gender">Gender</label>
+                    <select name="gender" id="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="married">Marital Status</label>
+                    <select name="married" id="married" required>
+                        <option value="" disabled selected>Select Marital Status</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="dependents">Dependents</label>
+                    <select name="dependents" id="dependents" required>
+                        <option value="" disabled selected>Select Number of Dependents</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3+">3+</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="education">Education</label>
+                    <select name="education" id="education" required>
+                        <option value="" disabled selected>Select Education Status</option>
+                        <option value="Graduate">Graduate</option>
+                        <option value="Not Graduate">Not Graduate</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="self_employed">Self Employed</label>
+                    <select name="self_employed" id="self_employed" required>
+                        <option value="" disabled selected>Are you Self Employed?</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="credit_history">Credit History</label>
+                    <select name="credit_history" id="credit_history" required>
+                        <option value="" disabled selected>Select Credit History</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="property_area">Property Area</label>
+                    <select name="property_area" id="property_area" required>
+                        <option value="" disabled selected>Select Property Area</option>
+                        <option value="Rural">Rural</option>
+                        <option value="Semiurban">Semiurban</option>
+                        <option value="Urban">Urban</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="applicant_income">Applicant Income</label>
+                    <input type="number" name="applicant_income" id="applicant_income" placeholder="Enter Applicant Income" step="any" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="loan_amount">Loan Amount</label>
+                    <input type="number" name="loan_amount" id="loan_amount" placeholder="Enter Loan Amount" step="any" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="loan_amount_term">Loan Amount Term (Months)</label>
+                    <input type="number" name="loan_amount_term" id="loan_amount_term" placeholder="Enter Loan Term in Months" required>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="btn">Predict Loan Status</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

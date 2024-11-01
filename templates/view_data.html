@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction Data</title>
+    <style>
+        /* Reset some default styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8; /* Light background color */
+        }
+
+        /* Container styling */
+        .container {
+            width: 90%; /* Reduced width for padding */
+            max-width: 1200px; /* Ensure it doesn’t stretch too wide */
+            margin: 40px auto;
+            background-color: #ffffff; /* White background for content */
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            padding: 20px;
+            overflow: hidden; /* Prevent content overflow */
+        }
+
+        /* Heading styling */
+        h1 {
+            text-align: center;
+            color: #4CAF50; /* Green color */
+            margin-bottom: 20px;
+            font-size: 2.5em; /* Larger font size */
+        }
+
+        /* Table wrapper for responsive behavior */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto; /* Enable horizontal scroll on smaller screens */
+            padding-bottom: 20px; /* Ensure padding at the bottom */
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+            min-width: 600px; /* Ensure table has a minimum width */
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd; /* Light gray border */
+        }
+
+        /* Header styling */
+        th {
+            background-color: #4CAF50; /* Green header */
+            color: white; /* White text for headers */
+            font-weight: bold;
+        }
+
+        /* Row hover effect */
+        tr:hover {
+            background-color: #e7f5e1; /* Light green on hover */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em; /* Responsive heading size */
+            }
+
+            table {
+                font-size: 16px; /* Smaller font on smaller screens */
+            }
+        }
+
+        /* Alternate row colors for better readability */
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9; /* Light gray for even rows */
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #ffffff; /* White for odd rows */
+        }
+
+        /* No data message */
+        td[colspan="12"] {
+            color: #777; /* Gray color for no data message */
+            font-style: italic; /* Italicize the message */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Applicant Loan Predictions Data</h1>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Gender</th>
+                    <th>Married</th>
+                    <th>Dependents</th>
+                    <th>Education</th>
+                    <th>Self Employed</th>
+                    <th>Applicant Income</th>
+                    <th>Loan Amount</th>
+                    <th>Loan Term</th>
+                    <th>Credit History</th>
+                    <th>Property Area</th>
+                    <th>Loan Status</th>
+                    <th>Eligible Loan Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if not is_empty %}
+                    {% for index, row in data.iterrows() %}
+                        <tr>
+                            <td>{{ row.Gender }}</td>
+                            <td>{{ row.Married }}</td>
+                            <td>{{ row.Dependents }}</td>
+                            <td>{{ row.Education }}</td>
+                            <td>{{ row.Self_Employed }}</td>
+                            <td>{{ row.ApplicantIncome }}</td>
+                            <td>{{ row.LoanAmount }}</td>
+                            <td>{{ row.Loan_Amount_Term }}</td>
+                            <td>{{ row.Credit_History }}</td>
+                            <td>{{ row.Property_Area }}</td>
+                            <td>{{ row.Loan_Status }}</td>
+                            <td>{{ row.Eligible_Loan_Amount }}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="12" style="text-align: center;">No data available.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

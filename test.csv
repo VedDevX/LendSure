@@ -1,0 +1,19 @@
+Gender,Married,Dependents,Education,Self_Employed,Credit_History,Property_Area,ApplicantIncome,LoanAmount,LoanAmountTerm,Loan_Status,Eligible_Loan_Amount,Prediction_Time
+Male,No,2,Graduate,No,Yes,Urban,1000000.0,3000000.0,20.0,Approved,2400000.0,2024-10-19 19:49:30.423145
+Male,Yes,2,Graduate,No,Yes,Urban,1000000.0,3500000.0,20.0,Approved,2800000.0
+Male,No,2,Graduate,No,Yes,Urban,1200000.0,3700000.0,25.0,Approved,2960000.0
+Male,Yes,3+,Graduate,No,Yes,Urban,3000000.0,9000000.0,30.0,Approved,6300000.0
+Male,No,2,Graduate,Yes,Yes,Urban,1200000.0,3300000.0,15.0,Approved,2640000.0
+Female,No,1,Graduate,No,No,Urban,700000.0,1500000.0,13.0,Rejected,0.0
+Male,No,1,Graduate,No,No,Urban,800000.0,1500000.0,16.0,Rejected,0.0
+Male,No,2,Not Graduate,Yes,Yes,Urban,1200000.0,3000000.0,20.0,Approved,2400000.0
+Male,No,1,Graduate,No,Yes,Urban,1200000.0,3300000.0,20.0,Approved,2970000.0
+Male,No,2,Graduate,No,Yes,Urban,1200000.0,3500000.0,25.0,Approved,2800000.0
+Male,No,3+,Graduate,No,Yes,Semiurban,200000.0,1000000.0,24.0,Approved,700000.0
+Female,Yes,1,Not Graduate,Yes,Yes,Semiurban,300000.0,1000000.0,24.0,Approved,900000.0
+Male,Yes,3+,Not Graduate,No,Yes,Semiurban,300000.0,800000.0,24.0,Approved,560000.0
+Male,Yes,2,Not Graduate,No,Yes,Rural,250000.0,600000.0,18.0,Approved,480000.0
+Female,No,1,Graduate,No,Yes,Rural,300000.0,600000.0,24.0,Rejected,0.0
+Male,No,3+,Graduate,No,Yes,Urban,1500000.0,4000000.0,24.0,Approved,2800000.0
+Male,No,2,Graduate,No,Yes,Urban,700000.0,2000000.0,24.0,Approved,1600000.0
+Male,No,2,Graduate,No,Yes,Semiurban,350000.0,1000000.0,24.0,Approved,800000.0

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
+            color: #000000;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.95); /* Lighter semi-transparent background */
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 6px 40px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+            text-align: center; /* Center text */
+        }
+
+        h1 {
+            font-size: 2.8rem; /* Increased font size for emphasis */
+            color: #28a745; /* Green color */
+            margin-bottom: 30px; /* More space below heading */
+        }
+
+        .status-message h2 {
+            font-size: 1.8rem; /* Large font for the status */
+            margin: 20px 0; /* Added margin */
+        }
+
+        .status-message span {
+            font-weight: bold; /* Bold font */
+            padding: 10px 20px; /* Increased padding */
+            border-radius: 10px; /* More rounded corners */
+            display: inline-block; /* Display as block for spacing */
+        }
+
+        /* Approval message styling */
+        .approved {
+            background-color: #28a745; /* Green background */
+            color: #000000; /* Black text */
+            border: 2px solid #28a745; /* Green border */
+        }
+
+        /* Rejection message styling */
+        .rejected {
+            background-color: #dc3545; /* Red background */
+            color: #000000; /* Black text */
+            border: 2px solid #dc3545; /* Red border */
+        }
+
+        .approved-message, .rejected-message {
+            font-size: 1.4rem; /* Increased message size */
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            color: #333;
+        }
+
+        .approved-message {
+            background-color: rgba(40, 167, 69, 0.15); /* Lighter green for message box */
+            border: 2px solid #28a745;
+        }
+
+        .rejected-message {
+            background-color: rgba(220, 53, 69, 0.15); /* Lighter red for message box */
+            border: 2px solid #dc3545;
+        }
+
+        .actions {
+            margin-top: 40px; /* More space */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px; /* Wider padding for button */
+            background-color: #28a745; /* Green background */
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 10px; /* More rounded corners */
+            font-size: 1.2rem; /* Larger font */
+            transition: background-color 0.3s, transform 0.2s; /* Smooth hover effects */
+            margin: 0 10px;
+        }
+
+        .btn:hover {
+            background-color: #218838; /* Darker green on hover */
+            transform: translateY(-3px); /* Lift effect */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                margin: 20px auto;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            .status-message h2 {
+                font-size: 1.6rem;
+            }
+
+            .approved-message, .rejected-message {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="result-box">
+            <h1>Loan Prediction Result</h1>
+
+            <!-- Display the loan status -->
+            <div class="status-message">
+                <h2>Your Loan Status is: 
+                    <span class="{{ result.lower() }}">{{ result }}</span>
+                </h2>
+            </div>
+
+            <!-- If loan is approved, show the eligible loan amount -->
+            {% if result == 'Approved' %}
+                <div class="approved-message">
+                    <p>Congratulations! Your loan has been approved.</p>
+                    <p>The eligible loan amount is: <span>{{ eligible_loan_amount }}</span></p>
+                </div>
+            {% else %}
+                <div class="rejected-message">
+                    <p>Unfortunately, your loan application has been rejected.</p>
+                </div>
+            {% endif %}
+
+            <!-- Action buttons -->
+            <div class="actions">
+                <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+                <a href="{{ url_for('view_data') }}" class="btn">View All Predictions</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
