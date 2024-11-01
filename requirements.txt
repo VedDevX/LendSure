@@ -1,9 +1,5 @@
 flask
 pandas
-matplotlib
 numpy
-warnings
-scikit-learn
 joblib
-os
 gunicorn
